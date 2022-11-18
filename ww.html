@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+				<meta charset="UTF-8">
+        <title>Задание</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background: lightcoral;
+            }
+
+            div {
+                text-align: center;
+            }
+
+            button {
+                border: 1px solid black;
+                padding: 15px 20px;
+                border-radius: 20px;
+                background: transparent;
+                cursor: pointer;
+                outline: none;
+            }
+
+            h1, h3 {
+                animation: down 50s;
+            }
+
+            @keyframes down {
+                from {
+                    transform: translateY(-50px);
+                }
+
+                to {
+                    transform: translateY(0);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h3>Привет, Владилен</h3>
+            <h1>Сейчас 0:0:0</h1>
+            <button>Сменить фон</button>
+        </div>
+
+				<script>
+	        const name = prompt('Как вас зовут?')
+	        document.querySelector('h3').textContent = 'Привет, ' + name
+	        document.querySelector('h1').textContent = 'Я гей ' + new Date().toLocaleTimeString()
+	
+	        setInterval(function() {
+	            document.querySelector('h1').textContent = 'Сейчас ' + new Date().toLocaleTimeString()
+	        }, 1000)
+	
+	        const colors = ['indigo', 'green', 'darkred', 'coral', 'orange']
+	        let index = 0
+	
+	        document.querySelector('button').onclick = function() {
+	            document.body.style.background = colors[index]
+	            index++
+	            if (index >= colors.length) index = 0
+	        }
+	    </script>
+    </body>
+</html>
